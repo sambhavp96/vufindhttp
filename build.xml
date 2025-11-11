@@ -41,6 +41,15 @@
     <phingcall target="rector-console"/>
   </target>
 
+  <!-- Quality Assurance PHP Tasks -->
+  <target name="qa-console" description="quality assurance php tasks">
+    <phingcall target="phpunitfast"/>
+    <phingcall target="phpcs-console"/>
+    <phingcall target="php-cs-fixer-dryrun"/>
+    <phingcall target="phpstan-console"/>
+    <phingcall target="rector-console"/>
+  </target>
+
   <!-- Report rule violations with PHPMD (mess detector) -->
   <target name="phpmd">
     <exec executable="${srcdir}/vendor/bin/phpmd">
